@@ -1,0 +1,41 @@
+{
+  "name": "cutter",
+  "version": "1.0.0",
+  "description": "Google Chrome extension to cut content on websites where copying or selecting text is difficult or impossible and save it to clipboard.",
+  "main": "dist/js/app.js",
+  "scripts": {
+    "start": "npm run clean && webpack --config webpack/webpack.dev.js --watch",
+    "build": "npm run clean && webpack --config webpack/webpack.prod.js",
+    "clean": "rimraf dist",
+    "test": "npx jest"
+  },
+  "author": {
+    "name": "Kacper Pruszyński (plumthedev)",
+    "email": "kacper.pruszynski99@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plumthedev/cutter.git"
+  },
+  "dependencies": {
+    "jquery": "^3.5.0",
+    "md5": "^2.3.0",
+    "moment": "~2.24.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.100",
+    "@types/jest": "^25.1.4",
+    "@types/jquery": "^3.3.33",
+    "@types/md5": "^2.2.1",
+    "copy-webpack-plugin": "^6.1.0",
+    "jest": "^25.1.0",
+    "rimraf": "^3.0.2 ",
+    "ts-jest": "^25.2.1 ",
+    "ts-loader": "^6.2.1",
+    "typescript": "~3.8.3 ",
+    "webpack": "^4.44.1",
+    "webpack-cli": "~3.3.11",
+    "webpack-merge": "~4.2.2"
+  }
+}
