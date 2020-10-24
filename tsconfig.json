@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@config/*": [
+        "./src/config/*"
+      ],
+      "@core/*": [
+        "./src/core/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
