@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "Cutter",
+  "description": "Cut content from website and save it to clipboard.",
+  "version": "1.0.0",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "commands": {
+    "TOGGLE_CUTTER_MODE": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1"
+      },
+      "description": "Toggle cutter mode",
+      "global": true
+    },
+    "CUT_SELECTED_CONTENT": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2"
+      },
+      "description": "Cut selected content.",
+      "global": true
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/app.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "permissions": [
+    "activeTab",
+    "declarativeContent"
+  ]
+}
