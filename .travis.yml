@@ -1,14 +1,25 @@
 language: node_js
+os: linux
+dist: xenial
 node_js:
   - "12"
 cache:
   directories:
     - "node_modules"
+before_deploy: |-
+  log=$(git log $TRAVIS_COMMIT_RANGE --oneline)
+  export TAG=$TRAVIS_COMMIT_MESSAGE
+  export BODY=$'**Changelog:**<br/>'${log//$'\n'/<br/>}
+  export RELEASE_ZIP_NAME=cutter-$($TAG).zip
+  zip $RELEASE_ZIP_NAME
 deploy:
   provider: releases
-  api_key: $GITHUB_OAUTH_TOKEN
-  file: "dist"
-  skip_cleanup: true
+  token: $GITHUB_OAUTH_TOKEN
+  name: $TAG
+  tag_name: $TAG
+  release_notes: $BODY
+  file: $RELEASE_ZIP_NAME
+  cleanup: false
   on:
     tags: true
 script:
