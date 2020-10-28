@@ -21,6 +21,6 @@ deploy:
   file: $RELEASE_ZIP_NAME
   cleanup: false
   on:
-    tags: true
+    branch: master
 script:
   - npm build
