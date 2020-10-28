@@ -4,10 +4,19 @@ node_js:
 cache:
   directories:
     - "node_modules"
+before_deploy: |-
+  log=$(git log $TRAVIS_COMMIT_RANGE --oneline)
+  export TAG=$TRAVIS_COMMIT_MESSAGE
+  export BODY=$'**Changelog:**<br/>'${log//$'\n'/<br/>}
+  export RELEASE_ZIP_NAME=cutter-$($TAG).zip
+  zip $RELEASE_ZIP_NAME
 deploy:
   provider: releases
   api_key: $GITHUB_OAUTH_TOKEN
-  file: "dist"
+  name: $TAG
+  tag_name: $TAG
+  body: $BODY
+  file: $RELEASE_ZIP_NAME
   skip_cleanup: true
   on:
     tags: true
