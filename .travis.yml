@@ -12,8 +12,8 @@ before_deploy: |-
   export BODY=$'**Changelog:**<br/>'${log//$'\n'/<br/>}
   export RELEASE_NAME=$'cutter-'$TAG
   export RELEASE_ZIP_NAME=$RELEASE_NAME$'.zip'
-  cp dist $RELEASE_NAME
-  zip $RELEASE_ZIP_NAME $RELEASE_NAME$'/*' -r
+  cp -R dist $RELEASE_NAME
+  zip -r $RELEASE_ZIP_NAME $RELEASE_NAME
 deploy:
   provider: releases
   token: $GITHUB_OAUTH_TOKEN
