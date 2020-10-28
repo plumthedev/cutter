@@ -10,8 +10,10 @@ before_deploy: |-
   log=$(git log $TRAVIS_COMMIT_RANGE --oneline)
   export TAG=$TRAVIS_COMMIT_MESSAGE
   export BODY=$'**Changelog:**<br/>'${log//$'\n'/<br/>}
-  export RELEASE_ZIP_NAME=cutter-$($TAG).zip
-  zip $RELEASE_ZIP_NAME
+  export RELEASE_NAME=$'cutter-'$TAG
+  export RELEASE_ZIP_NAME=$RELEASE_NAME$'.zip'
+  cp dist $RELEASE_NAME
+  zip $RELEASE_ZIP_NAME $RELEASE_NAME$'/*' -r
 deploy:
   provider: releases
   token: $GITHUB_OAUTH_TOKEN
