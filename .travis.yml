@@ -25,4 +25,4 @@ deploy:
   on:
     branch: master
 script:
-  - npm build
+  - npm run build
