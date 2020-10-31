@@ -17,7 +17,7 @@ deploy:
   name: $RELEASE_NAME
   tag_name: $RELEASE_TAG_NAME
   file: $RELEASE_FILE
-  cleanup: false
+  skip_cleanup: true
   on:
     branch: master
 script:
