@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Package details
+export PACKAGE_NAME="cutter"
+export PACKAGE_VERSION="1.0.0"
+export PACKAGE_BUILD_DIRECTORY="dist"
+
+# Travis CI - release
+export RELEASE_NAME=$PACKAGE_VERSION
+export RELEASE_TAG_NAME=$PACKAGE_VERSION
+export RELEASE_DIRECTORY=$PACKAGE_NAME'-'$PACKAGE_VERSION
+export RELEASE_FILE=$PACKAGE_NAME'-'$PACKAGE_VERSION'.zip'
