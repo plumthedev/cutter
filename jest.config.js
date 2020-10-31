@@ -1,8 +1,10 @@
+const {pathsToModuleNameMapper} = require('ts-jest/utils');
+const {compilerOptions} = require('./tsconfig.json');
+
 module.exports = {
+    preset: 'ts-jest/presets/js-with-babel',
     "roots": [
-        "src"
+        "tests"
     ],
-    "transform": {
-        "^.+\\.ts$": "ts-jest"
-    },
-}; 
+    moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths)
+};
