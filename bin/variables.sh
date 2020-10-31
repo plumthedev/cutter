@@ -2,7 +2,7 @@
 
 # Package details
 export PACKAGE_NAME="cutter"
-export PACKAGE_VERSION="1.0.0"
+export PACKAGE_VERSION="1.0.1"
 export PACKAGE_BUILD_DIRECTORY="dist"
 
 # Travis CI - release

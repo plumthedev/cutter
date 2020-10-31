@@ -1,6 +1,6 @@
 {
   "name": "cutter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Google Chrome extension to cut content on websites where copying or selecting text is difficult or impossible and save it to clipboard.",
   "main": "dist/js/app.js",
   "scripts": {
