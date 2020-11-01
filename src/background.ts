@@ -6,4 +6,4 @@
  * @package Cutter
  */
 
-import './core/commands/handler';
+import '@core/commands/handler';
