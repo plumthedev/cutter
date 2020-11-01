@@ -21,4 +21,5 @@ deploy:
   on:
     branch: master
 script:
+  - npm run test
   - npm run build
